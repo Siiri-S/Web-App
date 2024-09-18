@@ -1,6 +1,8 @@
 {
+  "contacts.title": "Ota yhteyttä",
   "education.title": "Koulutus",
   "hobbies.title": "Harrastukset",
   "home.title": "Koti",
-  "workExperience.title": "Työkokemus"
+  "experience.title": "Työkokemus",
+  "skills.title": "Taidot"
 }

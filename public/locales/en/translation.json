@@ -1,6 +1,8 @@
 {
+  "contacts.title": "Contact me",
   "education.title": "Education",
   "hobbies.title": "Hobbies",
   "home.title": "Home",
-  "workExperience.title": "Work Experience"
+  "experience.title": "Work Experience",
+  "skills.title": "Skills"
 }
