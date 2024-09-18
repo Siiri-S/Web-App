@@ -9,11 +9,10 @@ import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 
 const NavBar = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const pages = ['skills', 'experience', 'education', 'hobbies', 'contacts'];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -58,7 +57,9 @@ const NavBar = () => {
           }}
         >
           {pages.map((page) => (
-            <StyledLink to={page}>{t(`${page}.title`)}</StyledLink>
+            <StyledLink key={`${page}-link`} to={page}>
+              {t(`${page}.title`)}
+            </StyledLink>
           ))}
         </Box>
 

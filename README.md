@@ -1,50 +1,15 @@
-# React + TypeScript + Vite
+## Hello and welcome to my personal Web App project repo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal project with the goal to produce a web appplication to promote me and my skills. I've taken different design and architecture decisions to either enhance my existing skills or to learn new skills.
 
-Currently, two official plugins are available:
+You can find the latest version of the app [**here**](https://main.d3mljzvkcgimev.amplifyapp.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is still in progress and following list gives a rough plan for the project:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [x] Initialise the project and connect to AWS amplify
+- [ ] Create initial frontend using React **(in progress)**
+- [ ] Create server functionality with AWS Lambda
+- [ ] Create GraphQL API using DynamoDB
+- [ ] Connect frontend to the AWS Lambda and API
+- [ ] Add more functionalities (authentication etc.)
+- [ ] Get and set own domain

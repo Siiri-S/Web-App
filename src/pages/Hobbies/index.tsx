@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 const Hobbies = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div>
       <h1>{t('hobbies.title')}</h1>
