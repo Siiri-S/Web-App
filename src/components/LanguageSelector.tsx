@@ -1,22 +1,25 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 enum Language {
-  'FI',
-  'EN',
+  'fi',
+  'en',
 }
 
 const LanguageSelector = () => {
-  const [selectedLanguage, setLanguage] = useState<Language>('FI');
+  const { t, i18n } = useTranslation();
+
+  console.log(i18n.Language);
   return (
     <div>
       <span>
         <Button
           variant="text"
           color="white"
-          disabled={selectedLanguage == 'FI'}
+          disabled={i18n.language == 'fi'}
           onClick={() => {
-            setLanguage('FI');
+            i18n.changeLanguage('fi');
           }}
         >
           FI
@@ -25,9 +28,9 @@ const LanguageSelector = () => {
         <Button
           variant="text"
           color="white"
-          disabled={selectedLanguage == 'EN'}
+          disabled={i18n.language == 'en'}
           onClick={() => {
-            setLanguage('EN');
+            i18n.changeLanguage('en');
           }}
         >
           EN
