@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { AppBar } from '@mui/material';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
 import HomeIcon from '@mui/icons-material/Home';
@@ -10,6 +9,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 
 const NavBar = () => {
   const { t } = useTranslation();
@@ -42,10 +42,17 @@ const NavBar = () => {
         }}
       >
         {/* Home icon */}
-
-        <StyledLink to={''}>
+        <IconButton
+          aria-label="navigation menu"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={handleOpenNavMenu}
+          color="inherit"
+          component={RouterLink}
+          to={''}
+        >
           <HomeIcon />
-        </StyledLink>
+        </IconButton>
 
         {/* Navigation links */}
         <Box
@@ -57,17 +64,22 @@ const NavBar = () => {
           }}
         >
           {pages.map((page) => (
-            <StyledLink key={`${page}-link`} to={page}>
+            <Button
+              variant="text"
+              component={RouterLink}
+              key={`${page}-link`}
+              to={page}
+              color="main.contrastText"
+            >
               {t(`${page}.title`)}
-            </StyledLink>
+            </Button>
           ))}
         </Box>
 
         {/* Language selector */}
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex', md: 'flex' },
-            ml: { sm: 'auto' },
+            ml: 'auto',
             pt: 0.5,
           }}
         >
@@ -101,12 +113,14 @@ const NavBar = () => {
             onClose={handleCloseNavMenu}
             sx={{ display: { xs: 'block', md: 'none' } }}
           >
-            <MenuItem>
-              <LanguageSelector />
-            </MenuItem>
             {pages.map((page) => (
-              <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <MenuLink to={page}>{t(`${page}.title`)}</MenuLink>
+              <MenuItem
+                key={page}
+                onClick={handleCloseNavMenu}
+                component={RouterLink}
+                to={page}
+              >
+                {t(`${page}.title`)}
               </MenuItem>
             ))}
           </Menu>
@@ -115,14 +129,5 @@ const NavBar = () => {
     </AppBar>
   );
 };
-
-const StyledLink = styled(Link)`
-  color: white;
-  padding: 0.5rem 1rem 0 1rem;
-`;
-const MenuLink = styled(Link)`
-  padding: 0.5rem;
-  color: black;
-`;
 
 export default NavBar;
