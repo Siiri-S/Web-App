@@ -9,6 +9,12 @@ const LanguageSelector = () => {
       <span>
         <Button
           variant="text"
+          color="main.contrastText"
+          sx={{
+            '&.Mui-disabled': {
+              color: '#8658A6',
+            },
+          }}
           disabled={i18n.language == 'fi'}
           onClick={() => {
             i18n.changeLanguage('fi');
@@ -19,7 +25,13 @@ const LanguageSelector = () => {
         |
         <Button
           variant="text"
+          color="main.contrastText"
           disabled={i18n.language == 'en'}
+          sx={{
+            '&.Mui-disabled': {
+              color: '#8658A6',
+            },
+          }}
           onClick={() => {
             i18n.changeLanguage('en');
           }}
