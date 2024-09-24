@@ -43,10 +43,7 @@ const NavBar = () => {
       >
         {/* Home icon */}
         <IconButton
-          aria-label="navigation menu"
-          aria-controls="menu-appbar"
-          aria-haspopup="true"
-          onClick={handleOpenNavMenu}
+          aria-label="home icon"
           color="inherit"
           component={RouterLink}
           to={''}
@@ -69,7 +66,9 @@ const NavBar = () => {
               component={RouterLink}
               key={`${page}-link`}
               to={page}
-              color="main.contrastText"
+              sx={{
+                color: 'primary.contrastText',
+              }}
             >
               {t(`${page}.title`)}
             </Button>
