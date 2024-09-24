@@ -14,10 +14,17 @@ const theme = createTheme({
       main: '#519c77',
     },
     error: {
-      main: '#d23638',
+      main: '#de1481',
     },
     warning: {
       main: '#000000',
+    },
+    background: {
+      default: '#f2eff5',
+      paper: '#ffffff',
+    },
+    info: {
+      main: '#82afce',
     },
   },
 });

@@ -26,7 +26,11 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar>
+    <AppBar
+      sx={{
+        height: (theme) => theme.spacing(5),
+      }}
+    >
       {/* Contents */}
       <Box
         sx={{
